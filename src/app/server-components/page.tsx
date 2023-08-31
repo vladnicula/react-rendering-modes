@@ -1,4 +1,5 @@
 import { PokemonCardServer } from "@/components/PokemonCard/PokemonCardServer"
+import { ToggleExmaple } from "@/components/ToggleExmaple/ToggleExmaple"
 import { getPokemonList } from "@/lib/pokemonApi"
 
 export default async function Page() {
@@ -10,7 +11,11 @@ export default async function Page() {
             <p>Bellow is the react component that will render only on the server</p>
             <div className="flex flex-wrap gap-20">{
                 pokemonNames.results.map(({name}) => {
-                    return <PokemonCardServer key={name} pokemonName={name} />
+                    return (
+                        <ToggleExmaple key={name}>
+                            <PokemonCardServer pokemonName={name} />
+                        </ToggleExmaple>
+                    )
                 })
             }
             </div>

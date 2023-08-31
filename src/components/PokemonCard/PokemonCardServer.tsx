@@ -1,4 +1,5 @@
 import { AbilityCardServer } from "../AbilityCard/AbilityCardServer"
+import 'server-only'
 
 import { getPokemonDetails } from "@/lib/pokemonApi"
 
